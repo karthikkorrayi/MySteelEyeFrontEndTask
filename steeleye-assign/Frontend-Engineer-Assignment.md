@@ -15,6 +15,7 @@ By looking at the give code that how it generating a list with React, On fulfill
 
 Inorder to build lists of pieces, it must be use the character and the characteristic "key" as specified in the React documentation. To determine whether items in the list which has already been modified or added or destroyed, The React needs so many keys. Here, an individual identifier is required for each object and the ID about on entity can usually works nicely for all of React's components list creation work.
 Whenever making lists of components in JavaScript, user must use a special word attribute called "key", where that React uses keys to indicate whether additional burdens have been modified or removed or altered or to put it in an another way, were the designers may say that keywords are applied to identify the components in collections.
+Coming to my modification part, I added an arrow function to Onclickhandler. I changed the syntax from setSelectedIndex from selectedIndex and its vice-verse from const and I added marks in the ItemList to check and added a key function and return with === operator to check the items removed from the function for an array and changed some mistakes in WrappedListcomponent
 
 ##  Code
 
@@ -53,7 +54,7 @@ const SingleListItem = memo(WrappedSingleListItem);
 const WrappedListComponent = ({
   items,
 }) => {
-  const [setSelectedIndex, selectedIndex] = useState();
+  const [selectedIndex, setSelectedIndex] = useState();
 
   useEffect(() => {
     setSelectedIndex(null);
@@ -67,10 +68,11 @@ const WrappedListComponent = ({
     <ul style={{ textAlign: 'left' }}>
       {items.map((item, index) => (
         <SingleListItem
+          key={item.id}
           onClickHandler={() => handleClick(index)}
           text={item.text}
           index={index}
-          isSelected={selectedIndex}
+          isSelected={selectedIndex === index}
         />
       ))}
     </ul>
@@ -78,7 +80,7 @@ const WrappedListComponent = ({
 };
 
 WrappedListComponent.propTypes = {
-  items: PropTypes.array(PropTypes.shapeOf({
+  items: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
   })),
 };
