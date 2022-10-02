@@ -91,7 +91,7 @@ const List = memo(WrappedListComponent);
 
 export default List;
 
-# Root file
+//root file
 import{appendFile} from "fs";
 import React from "react";
 import List from "./";
