@@ -9,7 +9,7 @@ In React, Generally a component that makes it easier to recognize where things c
 
 2. What problems / warnings are there with code?
 
-By looking at the give code that how it generating a list with React, On fulfilling this, where we will traverse the column element using column element using map() code and its neighbour surround modifications in square brackets. The parts and components are involved in which then assigned to ListItems and finally, it displays this list on the Web by putting it among the <ul> and </ul> components.
+By looking at the give code that how it generating a list with React, On fulfilling this, where we will traverse the column element using column element using map() code and its neighbour surround modifications in square brackets. The parts and components are involved in which then assigned to ListItems and finally, it displays this list on the Web by putting it among the ul> and /ul> components.
 
 3. Please fix, optimize, and/or modify the component as much as you think is necessary.
 
